@@ -36,12 +36,13 @@ public class IssuesServlet extends HttpServlet {
                 resp.getWriter().write("<h3>No such project or project hasn't bugs issues<h3>");
             } else {
                 Map<String, Integer> wordsMap = Dictionary.countWords(issues);
+                int numOfIssues = issues.size();
 
                 AtomicInteger counter = new AtomicInteger(1);
                 wordsMap.forEach((key, value) -> {
                     try {
                         resp.getWriter().write(counter.getAndIncrement() + ". " + key
-                                + " - found " + value + " times.<br>");
+                                + " - frequency = " + ((double)value / numOfIssues) + "<br>");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
