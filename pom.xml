@@ -6,11 +6,11 @@
     <artifactId>test</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <organization>
-        <name>Example Company</name>
-        <url>http://www.example.com/</url>
+        <name>stormrvge</name>
+        <url>http://github.com/stormrvge</url>
     </organization>
-    <name>test</name>
-    <description>This is the com.stormrvge.task:test plugin for Atlassian JIRA.</description>
+    <name>FrequentlyWordsFinder</name>
+    <description>This is the plugin which count frequently used words in issues with type "Bug".</description>
     <packaging>atlassian-plugin</packaging>
     <dependencies>
         <dependency>

@@ -16,7 +16,7 @@
     <resource type="download" name="test.css" location="/css/test.css"/>  
     <resource type="download" name="test.js" location="/js/test.js"/>  
     <resource type="download" name="images/" location="/images"/>  
-    <context>test</context> 
+    <context>test</context>
   </web-resource>  
   <servlet name="Issues Servlet" i18n-name-key="issues-servlet.name" key="issues-servlet" class="com.stormrvge.task.servlet.IssuesServlet"> 
     <description key="issues-servlet.description">The Issues Servlet Plugin</description>  
