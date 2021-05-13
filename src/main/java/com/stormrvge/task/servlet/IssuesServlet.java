@@ -22,6 +22,13 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class IssuesServlet extends HttpServlet {
+    private final JiraAuthenticationContext authenticationContext;
+    private final SearchService searchService;
+
+    public IssuesServlet() {
+        this.authenticationContext = ComponentAccessor.getJiraAuthenticationContext();
+        this.searchService = ComponentAccessor.getComponent(SearchService.class);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -58,9 +65,6 @@ public class IssuesServlet extends HttpServlet {
     // and returns list of "bug" issues
     private List<Issue> getIssues(String projectName) {
         final String BUGS = "10104";    // This is ID of "Bug" Issue Type
-
-        JiraAuthenticationContext authenticationContext = ComponentAccessor.getJiraAuthenticationContext();
-        SearchService searchService = ComponentAccessor.getComponent(SearchService.class);
 
         ApplicationUser user = authenticationContext.getLoggedInUser();
         JqlClauseBuilder jqlClauseBuilder = JqlQueryBuilder.newClauseBuilder();
